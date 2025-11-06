@@ -53,20 +53,8 @@
   <footer>
     <p>**** © 2025 Global Time System | Made by Anushka  ****</p>
   </footer>
-  <script>
-       function logout() {
-  localStorage.removeItem("loggedInUser");
-  window.location.href = "login.html";
-}
-
-// Block access to home.html if not logged in
-window.onload = function() {
-  if (!localStorage.getItem("loggedInUser")) {
-    window.location.href = "login.html";
-  }
-};
-  </script>
 </body>
 </html>
+
 
 
