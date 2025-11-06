@@ -1,0 +1,270 @@
+
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f3f3f3;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Main Container */
+.container {
+  width: 60vw;
+  max-width: 800px;
+  height: auto;
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  border-radius: 20px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  padding: 30px 20px;
+}
+
+/* Header */
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #2e2e2e;
+}
+
+/* Time & Selection Area */
+.content {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+label.para {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+select#box {
+  width: 40%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 2px solid #333;
+  border-radius: 10px;
+  background-color: #fefefe;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+select#box:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Time, Date, Greeting */
+.time {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-top: 20px;
+  color: #111;
+}
+
+.date {
+  font-size: 1.1rem;
+  margin-top: 10px;
+}
+
+.greeting {
+  font-size: 1.4rem;
+  margin: 15px 0;
+  font-weight: bold;
+  color: #444;
+}
+
+/* Analog Clock */
+.analog-clock {
+  width: 160px;
+  height: 160px;
+  border: 6px solid #333;
+  border-radius: 50%;
+  margin: 20px auto;
+  position: relative;
+  background: radial-gradient(circle, #ffffff 70%, #e2e2e2 100%);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.hand {
+  width: 50%;
+  height: 2px;
+  background-color: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: left;
+  transform: rotate(90deg);
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Theme Toggle Button */
+#theme-toggle {
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #555;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#theme-toggle:hover {
+  background-color: #333;
+}
+
+/* Dark Mode */
+body.dark {
+  background-color: #121212;
+  color: #eee;
+}
+
+body.dark .container {
+  background-color: #1f1f1f;
+  color: #292727;
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.05);
+}
+
+body.dark #theme-toggle {
+  background-color: #eee;
+  color: #111;
+}
+
+body.dark select#box {
+  background-color: #333;
+  color: #fff;
+  border-color: #aaa;
+}
+
+/* Dropdown with Flags */
+.dropdown-wrapper {
+  position: relative;
+  width: 45%;
+  text-align: left;
+  font-size: 1rem;
+}
+
+.dropdown-selected {
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-selected:hover {
+  background-color: #f9f9f9;
+}
+
+.dropdown-options {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 110%;
+  left: 0;
+  right: 0;
+  background-color: white;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  display: none;
+  z-index: 1000;
+  max-height: 250px;
+  overflow-y: auto;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+}
+
+.dropdown-options li {
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-options li:hover {
+  background-color: #ececec;
+}
+
+.flag-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  select#box, .dropdown-wrapper {
+    width: 100%;
+  }
+
+  .time {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.3rem;
+  }
+
+  .time {
+    font-size: 1.2rem;
+  }
+
+  #theme-toggle {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+
+  .flag-icon {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+
+
+.back-link {
+  text-decoration: none;
+  background-color: #005d99;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 5px;
+}
+
+footer {
+  text-align: center;
+ margin-top: 10px;
+}
+

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Global Time System - Home</title>
+  <link rel="stylesheet" href="index.css" />
+  <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+</head>
+<body>
+  <header>
+    <h1><i class="ri-global-line"></i>  Global Time System</h1>
+    <p>World Time</p>
+  <a href="usecase.html" class="btn"><i class="ri-book-open-line"></i>  Real-World Use Cases</a>
+
+  </header>
+
+  <main>
+    <div class="card-container">
+
+      <div class="card">
+        <h2><i class="ri-timer-line"></i>  Global Time Viewer</h2>
+
+        <p>See the current time in major cities around the world.</p>
+        <a href="global.html" class="btn">Open Viewer</a>
+      </div>
+
+
+      <div class="card">
+        <h2><i class="ri-hourglass-fill"></i>  Timezone Comparison Tool</h2>
+        <p>Compare time differences between two cities instantly.</p>
+        <a href="compare.html" class="btn">Try Comparison</a>
+      </div>
+
+      <div class="card">
+        <h2><i class="ri-star-fill"></i> Favourite cities</h2>
+        <p>See the current time in major cities around the world.</p>
+        <a href="favourite.html" class="btn">Add city</a>
+      </div>
+
+       <div class="card">
+        <h2><i class="ri-hourglass-2-line"></i>  Event countdown</h2>
+        <p>Countdown for a event in any country.</p>
+        <a href="countdown.html" class="btn">Add event</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+      <button onclick="logout()" class="logout-btn">Logout  <i class="ri-logout-circle-r-line"></i></button>
+    <p>**** © 2025 Global Time System | Made by Anushka  ****</p>
+  </footer>
+  <script>
+       function logout() {
+  localStorage.removeItem("loggedInUser");
+  window.location.href = "login.html";
+}
+
+// Block access to home.html if not logged in
+window.onload = function() {
+  if (!localStorage.getItem("loggedInUser")) {
+    window.location.href = "login.html";
+  }
+};
+  </script>
+</body>
+</html>
+

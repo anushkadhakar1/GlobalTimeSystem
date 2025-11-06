@@ -1,0 +1,83 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #eef5f9;
+  color: #333;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+.back-link {
+  text-decoration: none;
+ background-color: #005d99;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 5px;
+}
+
+.favorite-section {
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+select, button {
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 1em;
+}
+
+button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+ul#favorites-list {
+  list-style: none;
+  padding: 0;
+}
+
+ul#favorites-list li {
+  background: #f9f9f9;
+  margin: 8px 0;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.delete-btn {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background: #c82333;
+}
+
+footer {
+  text-align: center;
+ margin-top: 66px;
+}
